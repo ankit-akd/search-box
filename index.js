@@ -29,6 +29,7 @@ const displayName = async (event) => {
   }
   const name = event.target.value;
   try {
+    suggestionBox.innerHTML = `<div class="loading">Loading...</div>
     const result = await getSearchSuggestions(name);
     suggestionsBox.innerHTML = '';
     if (Array.isArray(result) && result.length > 0) {
